@@ -1,0 +1,140 @@
+.bg {
+    
+    background-image: url(./assets/back.png);
+    height: 150px;
+    background-size: cover;
+}
+
+.btn-brand{
+    background-image: url(./assets/PinkGoth.svg);
+    width: 380px;
+    height: 140px;
+    background-size: cover;
+    background-color: transparent;
+    border-color: transparent;
+    position: absolute;
+  top: 50%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+  &:hover{
+    background-color: transparent;
+    border-color: transparent;
+  }
+  &:active{
+    background-color: lightpink!important;
+    border-color: lightpink!important;
+  }
+}
+
+.btn-cat{
+    background-image: url(./assets/Book.svg);
+    width: 85px;
+    height: 90px;
+    background-size: cover;
+    background-color: transparent;
+    border-color: transparent;
+    position: absolute;
+    left: 17.5%;
+    &:hover{
+        background-color: transparent;
+        border-color: transparent;
+      }
+    &:active{
+        background-color: lightpink!important;
+        border-color: lightpink!important;
+  }
+}
+
+.btn-hum{
+    background-image: url(./assets/Face.svg);
+    width: 85px;
+    height: 90px;
+    background-size: cover;
+    background-color: transparent;
+    border-color: transparent;
+    position: absolute;
+    left: 70%;
+    &:hover{
+        background-color: transparent;
+        border-color: transparent;
+      }
+    &:active{
+        background-color: lightpink!important;
+        border-color: lightpink!important;
+  }
+}
+
+.btn-cart{
+    background-image: url(./assets/Basket.svg);
+    width: 100px;
+    height: 90px;
+    background-size: cover;
+    background-color: transparent;
+    border-color: transparent;
+    position: absolute;
+    left: 77%;
+    &:hover{
+        background-color: transparent;
+        border-color: transparent;
+      }
+    &:active{
+        background-color: lightpink!important;
+        border-color: lightpink!important;
+  }
+}
+
+.cont{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.car{
+    justify-content: center;
+    align-content: center;
+}
+
+.title{
+  margin-bottom: 3vh;
+  max-width: 15vw;
+}
+
+.pic{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    object-fit: cover;
+    width: 80vw;
+  max-height: 70vh;
+}
+
+.back{
+    background-image: url(./assets/backph5.jpg);
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.cardholder{
+  margin-right: 10vw;
+  margin-left: 15vw;
+  margin-top: 5vh;
+}
+
+.cardimage{
+  height: 35vh;
+  object-fit: cover;
+}
+
+.card{
+  max-width: 20vw;
+  margin-bottom: 5vw;
+}
+
+.cattitle{
+  margin-top: 5vh;
+  margin-left: 43%;
+  max-width: 25vw;
+  height: 10vh;
+}
