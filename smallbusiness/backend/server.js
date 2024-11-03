@@ -1,13 +1,19 @@
 import express from 'express'
 import mysql from 'mysql'
 import cors from 'cors'
-import session from 'express-session'
+/*import session from 'express-session'
 import cookieParser from 'cookie-parser'
+import bodyParser from 'body-parser'*/
 
 const app = express()
-app.use(cors())
+app.use(cors({
+    origin:["http://localhost:5173"],
+    methods: ["POST", "GET"],
+    credentials: true
+}))
 app.use(express.json()) 
-app.use(cookieParser())
+/*app.use(cookieParser())
+app.use(bodyParser.json())
 app.use(session({
     secret: 'secret',
     resave: false,
@@ -16,7 +22,7 @@ app.use(session({
         secure: false,
         maxAge: 100*60*60*24,
     }
-}))
+}))*/
 
 const db = mysql.createConnection({
     host: "localhost",
@@ -33,7 +39,8 @@ app.get('/product', (req, res)=>{
     })
 })
 
-app.post('/login', (req, res) => {
+
+/*app.post('/login', (req, res) => {
     const sql = "SELECT * FROM profile WHERE `email` LIKE ? AND `password` LIKE ?";   
     
     db.query(sql, [req.body.email, req.body.password], (err, data) =>{
@@ -46,7 +53,7 @@ app.post('/login', (req, res) => {
             return res.json({Login: false})
         }
     })
-})
+})*/
 
 app.post('/signup', (req, res) =>{
     const sql = "INSERT INTO profile (email, password, name, surname, address) VALUES (?);";

@@ -1,4 +1,4 @@
-import { useState } from "react"
+/*import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import axios from "axios"
 import Validation from "./Validation"
@@ -51,7 +51,7 @@ function Login() {
                     onChange={handleInput}/>
                     {errors.password && <span className="text-danger">{errors.email}</span>}
                 </div>
-                <button type='submit' className="btn btn-success">Log In</button>
+                <button type='submit' className="btn btn-success" href='/'>Log In</button>
                 <h6>Don`t have an account? Sign up</h6>
                 <Link to='/signup' className="btn btn-default border text-white">Sign Up</Link>
             </form>
@@ -60,4 +60,4 @@ function Login() {
   )
 }
 
-export default Login
+export default Login*/

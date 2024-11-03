@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import Validation2 from "./Validation2"
 import axios from "axios"
 
@@ -27,7 +27,8 @@ function Signup(){
         if(errors.email === "" && errors.password === "" && errors.name === "" && errors.surname === "" && errors.address === ""){
             axios.post('http://localhost:8081/signup', values)
             .then(res => {
-                navigate('/login')
+                console.log(res)
+                navigate('/')
             })
             .catch(err => console.log(err))
         }
@@ -68,10 +69,12 @@ function Signup(){
                 </div>
                 <button type='submit' className="btn btn-success">Sign up</button>
                 <h6>Have an account? Log In</h6>
-                <Link to='/login' className="btn btn-default border text-white">Log in</Link>
+                
             </form>
         </div>
     </div>
   )
 }
 export default Signup
+
+//<Link to='/login' className="btn btn-default border text-white">Log in</Link>

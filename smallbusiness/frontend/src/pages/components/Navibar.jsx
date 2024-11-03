@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 
 function Navibar() {
+
+  
   return (
       <Navbar className='bg'>
         <Container className='cont'>

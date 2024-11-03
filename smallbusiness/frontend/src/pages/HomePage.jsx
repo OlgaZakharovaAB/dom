@@ -1,29 +1,32 @@
-import { Button, Carousel, Image} from "react-bootstrap";
+import { Button, Carousel, Image } from "react-bootstrap";
 import Catalog from './components/Catalog'
 
+function homePage() {
 
-function homePage(){
-    return(
+
+    return (
         <>
-        <div className="back">
-        <Carousel className="car">
-      <Carousel.Item >
-      <Image src="./src/assets/goth1.jpg" className="pic"/>
-      </Carousel.Item>
+            <div className="back">
+                <Carousel className="car">
+                    <Carousel.Item >
+                        <Image src="./src/assets/goth1.jpg" className="pic" />
+                    </Carousel.Item>
 
-      <Carousel.Item >
-      <Image src="./src/assets/goth2.jpg" className="pic"/>
-      </Carousel.Item>
+                    <Carousel.Item >
+                        <Image src="./src/assets/goth2.jpg" className="pic" />
+                    </Carousel.Item>
 
-      <Carousel.Item >
-      <Image src="./src/assets/goth3.jpg" className="pic"/>
-      </Carousel.Item>
-    </Carousel>
+                    <Carousel.Item >
+                        <Image src="./src/assets/goth3.jpg" className="pic" />
+                    </Carousel.Item>
+                </Carousel>
 
-    <Catalog></Catalog>
+                <Image src="./src/assets/Catalog.svg" className="cattitle"></Image>
 
-    <Button href="/catalog">Full Catalog</Button>
-    </div>
+                <Catalog></Catalog>
+
+                <Button href="/catalog" className="btn btn-full text-black">Full Catalog</Button>
+            </div>
         </>
     );
 }

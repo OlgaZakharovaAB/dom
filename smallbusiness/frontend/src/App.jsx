@@ -4,7 +4,6 @@ import FullCatalog from "./pages/FullCatalog.jsx";
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'
-import LoginPage from "./pages/LoginPage.jsx";
 import SignupPage from "./pages/SignupPage.jsx"
 
 
@@ -20,9 +19,8 @@ function App() {
 
         <Route path="/" Component={homePage}></Route>
         <Route path="/catalog" Component={FullCatalog}></Route>
-        <Route path="/profile" Component={LoginPage}></Route>
+        <Route path="/profile" Component={SignupPage}></Route>
         <Route path="/signup" Component={SignupPage}></Route>
-        <Route path="/login" Component={LoginPage}></Route>
 
       </Routes>
       </Router>

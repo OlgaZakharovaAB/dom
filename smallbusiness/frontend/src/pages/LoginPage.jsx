@@ -1,4 +1,4 @@
-import Login from "./components/Login.jsx"
+/*import Login from "./components/Login.jsx"
 
 function LoginPage(){
     return(
@@ -10,4 +10,4 @@ function LoginPage(){
     )
 }
 
-export default LoginPage
+export default LoginPage*/
