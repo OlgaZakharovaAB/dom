@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'
 import SignupPage from "./pages/SignupPage.jsx"
+import flogin from "./pages/components/flogin.jsx"
+
 
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
         <Route path="/catalog" Component={FullCatalog}></Route>
         <Route path="/profile" Component={SignupPage}></Route>
         <Route path="/signup" Component={SignupPage}></Route>
+        <Route path="/cart" Component={flogin}></Route>
 
       </Routes>
       </Router>

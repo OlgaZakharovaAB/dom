@@ -6,12 +6,8 @@ import cookieParser from 'cookie-parser'
 import bodyParser from 'body-parser'*/
 
 const app = express()
-app.use(cors({
-    origin:["http://localhost:5173"],
-    methods: ["POST", "GET"],
-    credentials: true
-}))
-app.use(express.json()) 
+app.use(cors())
+app.use(express.json())
 /*app.use(cookieParser())
 app.use(bodyParser.json())
 app.use(session({
@@ -27,35 +23,63 @@ app.use(session({
 const db = mysql.createConnection({
     host: "localhost",
     user: 'root',
-    password:'',
+    password: '',
     database: 'smallbusiness'
 })
 
-app.get('/product', (req, res)=>{
+app.get('/product', (req, res) => {
     const sql = "SELECT * FROM product";
-    db.query(sql, (err, data)=> {
-        if(err) return res.json(err) 
-            else return res.json(data);
+    db.query(sql, (err, data) => {
+        if (err) return res.json(err)
+        else return res.json(data);
     })
 })
 
 
-/*app.post('/login', (req, res) => {
-    const sql = "SELECT * FROM profile WHERE `email` LIKE ? AND `password` LIKE ?";   
-    
-    db.query(sql, [req.body.email, req.body.password], (err, data) =>{
-        if(err) return res.json("Error");
-        if(data.length > 0) {
-            req.session.email = data[0].email;
-            console.log(req.session.email)
-            return res.json({Login: true});
-        }else{
-            return res.json({Login: false})
-        }
+app.get('/login', (req, res) => {
+    const sql = "SELECT `id` FROM `profile` WHERE `email` LIKE ? AND `password` LIKE ?";
+    console.log(req)   
+    console.log(req.query.email)
+    db.query(sql, [req.query.email, req.query.password], (err, data) =>{
+        if (err) return res.json('err');
+        return res.json(data);
+        
     })
-})*/
+})
 
-app.post('/signup', (req, res) =>{
+app.get('/profile', (req, res) => {
+    const sql = "SELECT `id` FROM `profile` WHERE `email` = ?";
+    //console.log(req)
+    //console.log(req.query.email)
+    db.query(sql, req.query.email, (err, data) => {
+        if (err) return res.json('err');
+
+        return res.json(data);
+
+    })
+})
+
+app.post('/cart', (req, res) => {
+    const sql = "INSERT INTO `cart` (profile_id, product_id, amout) VALUES (?, ?, ?)";
+    console.log(req)
+    db.query(sql, [req.body.profile_id, req.body.product_id, req.body.number], (err, data) => {
+        if (err) return res.json(err);
+        return res.json(data)
+    })
+})
+
+app.get('/cartget', (req, res)=> {
+    const sql = "SELECT * FROM `cart` WHERE `profile_id` = ?";
+    console.log(req.query.id)
+    db.query(sql, req.query.id, (err, data) => {
+        if (err) return res.json(err);
+
+        return res.json(data);
+
+    })
+})
+
+app.post('/signup', (req, res) => {
     const sql = "INSERT INTO profile (email, password, name, surname, address) VALUES (?);";
     const values = [
         req.body.email,
@@ -65,11 +89,11 @@ app.post('/signup', (req, res) =>{
         req.body.address
     ]
     db.query(sql, [values], (err, data) => {
-        if(err) return res.json("Error");
+        if (err) return res.json("Error");
         return res.json('Good')
     })
 })
 
-app.listen(8081, ()=> {
+app.listen(8081, () => {
     console.log("listening");
 })
