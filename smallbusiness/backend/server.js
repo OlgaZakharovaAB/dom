@@ -43,7 +43,6 @@ app.get('/login', (req, res) => {
     db.query(sql, [req.query.email, req.query.password], (err, data) =>{
         if (err) return res.json('err');
         return res.json(data);
-        
     })
 })
 

@@ -42,7 +42,7 @@ function Login() {
             }
         })
             .then(res => setData(res.data))
-            .catch(err => console.log(err))
+            .catch(err => console.log("err222"))
 
         //data.sort((a, b) => a.product_id > b.product_id ? 1 : -1);
         console.log(data)
